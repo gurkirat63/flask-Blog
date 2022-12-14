@@ -13,8 +13,10 @@
            </div>
         <div class="content">
             <div class="card">
-                <h2>Title</h2>
-                <p>Post Body</p>
+                {% for item in data if item['id']|int == post_number|int %}
+                <h2>{{ item['title'] }}</h2>
+                <p>{{ item['body'] }}</p>
+                {% endfor %}
             </div>
 
     </div>
